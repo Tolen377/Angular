@@ -1,0 +1,21 @@
+<div style="width: 50%; margin: 0 auto; border: 1px solid black; padding: 10px">
+  <Ul>
+    <li>Nombre: {{ getName() }}</li>
+    <li>Mayor de edad:<input type="checkbox" [checked]="isAdult()" /></li>
+    <li>Pelicula favorita: {{ favoriteMovie.value }}</li>
+  </Ul>
+  <div>
+    <input
+      #favoriteMovie
+      type="text"
+      placeholder="¿Cual es tu pelicula favorita?"
+    />
+    <input
+      type="button"
+      value="aceptar"
+      (click)="getFavoriteMovie(favoriteMovie.value)"
+    />
+    <p [textContent]="textContent" [hidden]="hiddenProperty"></p>
+    <!--$event: dato de tipo Event-->
+  </div>
+</div>
